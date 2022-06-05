@@ -42,6 +42,17 @@ function Calculadora() {
     setCalc(value);
   }
 
+  const deleteAll = () => {
+    if(calc == '')
+    {
+      return;
+    }
+    const value = '';
+
+    setCalc(value);
+    setResult(value);
+  }
+
   return (
     <div className="App">
       <div className = "calculator-grid">
@@ -49,7 +60,7 @@ function Calculadora() {
           <div className = "numAnterior">{result ? result: ''}</div>
           <div className = "numActual">{calc || "0"}</div>
         </div>
-        <button className = "dosEspacios">AC</button>
+        <button className = "dosEspacios" onClick={deleteAll}>AC</button>
         <button onClick={deleteLast}>DEL</button>
         <button onClick={()=> updateCalc('/')}>/</button>
         <button onClick={()=> updateCalc('7')}>7</button>
